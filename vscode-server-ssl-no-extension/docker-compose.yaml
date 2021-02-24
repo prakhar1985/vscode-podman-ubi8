@@ -1,0 +1,12 @@
+services:
+
+  vscode1:
+    container_name: vscode-ssl
+    hostname: vscode-ssl
+    restart: always
+    image: localhost/vscode-server-ssl
+    ports:
+     - "8080:443"
+    volumes:
+     - '/opt/vscode-server/private:/etc/pki/nginx/private:Z'
+     - '/opt/vscode-server/certs:/etc/pki/nginx:Z'
