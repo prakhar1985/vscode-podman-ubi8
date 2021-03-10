@@ -1,0 +1,13 @@
+services:
+
+  vscode:
+    container_name: vscode
+    hostname: vscode.example.com
+    restart: always
+    image: localhost/vscode 
+    ports:
+     - "8080:443"
+    volumes:
+     - '/opt/vscode-server/private:/etc/pki/nginx/private:Z'
+     - '/opt/vscode-server/certs:/etc/pki/nginx:Z'
+     - '/opt/home/devops:/home/devops:Z'
